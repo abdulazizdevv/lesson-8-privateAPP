@@ -9,6 +9,7 @@ export const Posts = () => {
   const bodyRef = useRef();
   const [postModal, setPostModal] = useState(false);
   const [posts, setPosts] = useState([]);
+  const [id, setId] = useState();
 
   const getPosts = async () => {
     const data = await axios.get("http://localhost:8080/posts");
@@ -36,8 +37,21 @@ export const Posts = () => {
         }
       })
       .catch((err) => console.log(err));
-  };
 
+    axios
+      .put(`http://localhost:8080/posts/${id}`, {
+        title: titleRef.current.value,
+        body: bodyRef.current.value,
+        author: user.first_name + " " + user.last_name,
+      })
+      .then((res) => {
+        if (res.status === 200) {
+          getPosts();
+        }
+      })
+      .catch((err) => console.log(err));
+    setPostModal(false);
+  };
   const deletPost = (id) => {
     axios
       .delete(`http://localhost:8080/posts/${id}`)
@@ -51,31 +65,21 @@ export const Posts = () => {
 
   const editPost = (id) => {
     setPostModal(true);
-    axios
-   .put(`http://localhost:8080/posts/${id}`, {
-        // title: titleRef.current.value,
-        // body: bodyRef.current.value,
-        // author: user.first_name + " " + user.last_name,
-      })
-      .then((res) => {
-        if (res.status === 200) {
-          getPosts();
-        }
-      })
-      .catch((err) => console.log(err));
-  };
 
-  const handleDelete = (evt) => {
-    if (evt.target) {
-      const postId = evt.target.dataset.postId;
-      deletPost(postId);
-    }
+    setId(id);
   };
 
   const handleEdit = (evt) => {
     if (evt.target) {
       const postId = evt.target.dataset.postId;
       editPost(postId);
+    }
+  };
+
+  const handleDelete = (evt) => {
+    if (evt.target) {
+      const postId = evt.target.dataset.postId;
+      deletPost(postId);
     }
   };
 
