@@ -1,0 +1,70 @@
+{
+  "posts": [
+    {
+      "title": "ssssssss",
+      "body": "ssss",
+      "author": "Abdulaziz kenjaxunov",
+      "id": 18
+    },
+    {
+      "title": "aaaax",
+      "body": "zzzzzzzzzzz",
+      "author": "Abdulaziz kenjaxunov",
+      "id": 21
+    },
+    {
+      "title": "vhgyty",
+      "body": "lmoijo",
+      "author": "Abdulaziz kenjaxunov",
+      "id": 22
+    },
+    {
+      "title": "xxxxxxxxxxxxxxxx",
+      "body": "vvvvvvvv",
+      "author": "Abdulaziz kenjaxunov",
+      "id": 23
+    },
+    {
+      "title": "1222",
+      "body": "111",
+      "author": "Abdulaziz kenjaxunov",
+      "id": 24
+    },
+    {
+      "title": "qqqqqqqqqqq",
+      "body": "aaaaaaaaaaaaa",
+      "author": "Abdulaziz kenjaxunov",
+      "id": 25
+    }
+  ],
+  "users": [
+    {
+      "email": "bunyod@gmail.com",
+      "password": "$2a$10$6/XX8.M9umWY23nLgrRdfuKBAG34E0j9kppRz7jPcTz38B5KjR.TW",
+      "first_name": "Bunyod",
+      "last_name": "Nasriddinov",
+      "id": 1
+    },
+    {
+      "email": "jamshid@gmail.com",
+      "password": "$2a$10$BXboQtXmF99SHUP7ILGGK.w6V0q4QEk80ME/ePhRQVTgjCtsDycsO",
+      "first_name": "Jamshid",
+      "last_name": "husanov",
+      "id": 2
+    },
+    {
+      "email": "abdulaziz@gmail.com",
+      "password": "$2a$10$Y0utqeOZG2zAVjQF6svPae3ruw3VekYg2etm06Z9.PjE3R4u1ZxCW",
+      "first_name": "Abdulaziz",
+      "last_name": "kenjaxunov",
+      "id": 3
+    },
+    {
+      "email": "ali@gmail.com",
+      "password": "$2a$10$FJs0ZkajbM34P49P6T5nqOxmJdeh1RGGqT71tEDzilSpkc.ZWhlkG",
+      "first_name": "Ali",
+      "last_name": "Zoirov",
+      "id": 4
+    }
+  ]
+}
