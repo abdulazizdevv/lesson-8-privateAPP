@@ -2,12 +2,17 @@ import { useContext, useEffect, useRef, useState } from "react";
 import axios from "axios";
 import { Modal } from "../../components/Modal/Modal";
 import { UserContext } from "../../context/UserContext";
+import Delete from "../../assets/images/delete.svg";
+import Edit from "../../assets/images/edit.svg";
 
 export const Posts = () => {
   const { user } = useContext(UserContext);
   const titleRef = useRef();
+  const titleReftwo = useRef();
   const bodyRef = useRef();
+  const bodyReftwo = useRef();
   const [postModal, setPostModal] = useState(false);
+  const [editModal, setEditModal] = useState(false);
   const [posts, setPosts] = useState([]);
   const [id, setId] = useState();
 
@@ -37,20 +42,23 @@ export const Posts = () => {
         }
       })
       .catch((err) => console.log(err));
+  };
 
+  const handleEditPost = (evt) => {
+    evt.preventDefault();
     axios
       .put(`http://localhost:8080/posts/${id}`, {
-        title: titleRef.current.value,
-        body: bodyRef.current.value,
+        title: titleReftwo.current.value,
+        body: bodyReftwo.current.value,
         author: user.first_name + " " + user.last_name,
       })
       .then((res) => {
         if (res.status === 200) {
           getPosts();
+          setEditModal(false);
         }
       })
       .catch((err) => console.log(err));
-    setPostModal(false);
   };
   const deletPost = (id) => {
     axios
@@ -64,12 +72,11 @@ export const Posts = () => {
   };
 
   const editPost = (id) => {
-    setPostModal(true);
-
     setId(id);
   };
 
   const handleEdit = (evt) => {
+    setEditModal(true);
     if (evt.target) {
       const postId = evt.target.dataset.postId;
       editPost(postId);
@@ -106,14 +113,16 @@ export const Posts = () => {
                   data-post-id={post.id}
                   className="btn btn-warning"
                 >
-                  EDIT
+                  <img src={Edit} alt="icon" />
+                  Edit
                 </button>
                 <button
                   onClick={handleDelete}
                   data-post-id={post.id}
                   className="btn btn-danger"
                 >
-                  DELETE
+                  <img src={Delete} alt="icon" />
+                  Delete
                 </button>
               </div>
             </div>
@@ -134,6 +143,27 @@ export const Posts = () => {
             <input
               className="form-control my-3"
               ref={bodyRef}
+              type="text"
+              placeholder="Body"
+            />
+            <button className="btn btn-success">SEND</button>
+          </form>
+        </Modal>
+      ) : (
+        ""
+      )}
+      {editModal ? (
+        <Modal title={"Edit Post"} modal={editModal} setModal={setEditModal}>
+          <form onSubmit={handleEditPost}>
+            <input
+              className="form-control my-3"
+              ref={titleReftwo}
+              type="text"
+              placeholder="Title"
+            />
+            <input
+              className="form-control my-3"
+              ref={bodyReftwo}
               type="text"
               placeholder="Body"
             />
