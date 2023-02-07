@@ -28,6 +28,20 @@
       "first_name": "Ali",
       "last_name": "Zoirov",
       "id": 4
+    },
+    {
+      "email": "alivali@gmail.com",
+      "password": "$2a$10$mZE1jTSLvtLCCFS2jIXOyuUQDMUS5FudFTbBzD3vmCfuLLnI/wPeC",
+      "first_name": "Ali",
+      "last_name": "vali",
+      "id": 5
+    },
+    {
+      "email": "muhammadiy@gmail.com",
+      "password": "$2a$10$Bb241vy15/1MYPRnSCTneuXgplZjPxP/y23CoZWdTRZf5wegMxt1e",
+      "first_name": "Muhammadiy",
+      "last_name": "Solijanov",
+      "id": 6
     }
   ]
 }

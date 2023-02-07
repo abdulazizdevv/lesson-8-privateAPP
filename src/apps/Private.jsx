@@ -2,7 +2,7 @@ import { Route, Routes } from "react-router-dom";
 import { PrivateHeader } from "../components/PrivateHeader/PrivateHeader";
 import { PrivateHome } from "../pages/PrivateHome/PrivateHome";
 import { Users } from "../pages/Users/Users";
-import {Posts} from "../pages/Posts/Posts"
+import { Posts } from "../pages/Posts/Posts";
 
 export const Private = () => {
   return (
@@ -14,7 +14,7 @@ export const Private = () => {
             <Route index path="/" element={<PrivateHome />} />
             <Route path="/posts" element={<Posts />} />
             <Route path="/users" element={<Users />} />
-            <Route path="*" element={<h2 >Not Founded</h2>} />
+            <Route path="*" element={<h2>Not Founded</h2>} />
           </Routes>
         </div>
       </div>

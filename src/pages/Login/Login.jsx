@@ -35,7 +35,6 @@ export const Login = () => {
       <form onSubmit={handleSubmit}>
         <input
           ref={emailRef}
-          defaultValue={"eve.holt@reqres.in"}
           className="form-control my-3"
           type="email"
           placeholder="Email"
